@@ -1,7 +1,11 @@
-import React from "react";
+import GeneralInfo from "./components/GeneralInfo";
 
 const App = () => {
-  return <div></div>;
+  return (
+    <div>
+      <GeneralInfo />
+    </div>
+  );
 };
 
 export default App;
