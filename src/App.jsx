@@ -1,5 +1,6 @@
 import EducationExperience from "./components/EducationalExperience";
 import GeneralInfo from "./components/GeneralInfo";
+import MainHobbies from "./components/Hobbies";
 import Objectives from "./components/Objectives";
 import PracticalExperience from "./components/PracticalExperience";
 import MainSkills from "./components/Skills";
@@ -12,6 +13,7 @@ const App = () => {
       <EducationExperience />
       <PracticalExperience />
       <MainSkills />
+      <MainHobbies />
     </div>
   );
 };
