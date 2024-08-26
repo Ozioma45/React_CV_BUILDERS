@@ -35,6 +35,7 @@ function EducationExperience() {
 
   return (
     <div className="education-experience">
+      <h3>Education Experience</h3>
       {isEditing ? (
         <>
           {educations.map((education, index) => (

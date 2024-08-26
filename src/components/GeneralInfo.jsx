@@ -1,11 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 /* import "./GeneralInfo.css"; */
 
-function GeneralInfo() {
+function GeneralInfo({ setGeneralData }) {
   const [generaldata, setGeneraldata] = useState([
     { id: 1, name: "", address: "", phone: "", email: "" },
   ]);
   const [isEditing, setIsEditing] = useState(true);
+
+  useEffect(() => {
+    setGeneralData(generaldata); // Pass updated educations data to App
+  }, [generaldata, setGeneralData]);
 
   const handleInputChange = (id, field, value) => {
     setGeneraldata(
@@ -25,6 +29,7 @@ function GeneralInfo() {
 
   return (
     <div className="general-info">
+      <h3>General Information</h3>
       {isEditing ? (
         <>
           {generaldata.map((data, index) => (

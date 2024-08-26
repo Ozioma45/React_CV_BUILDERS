@@ -1,0 +1,38 @@
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #f0f2f5;
+}
+
+.container {
+  display: flex;
+  width: 80%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.left-side {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 20px;
+  border-right: 1px solid #ccc;
+}
+
+.right-side {
+  flex: 2;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.cv-section {
+  margin-bottom: 20px;
+}

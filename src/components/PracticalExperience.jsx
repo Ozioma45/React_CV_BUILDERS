@@ -49,6 +49,7 @@ function PracticalExperience() {
 
   return (
     <div className="practical-experience">
+      <h3>Work Experience</h3>
       {isEditing ? (
         <>
           {experiences.map((experience) => (

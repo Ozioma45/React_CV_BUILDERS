@@ -30,6 +30,7 @@ function MainHobbies() {
 
   return (
     <div className="hobbies">
+      <h3>General Information</h3>
       {isEditing ? (
         <>
           {hobbies.map((hobby, index) => (

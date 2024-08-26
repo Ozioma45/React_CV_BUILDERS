@@ -18,6 +18,7 @@ function Objectives() {
 
   return (
     <div className="objective">
+      <h3>Objectives</h3>
       {isEditing ? (
         <>
           <div className="objective-entry">

@@ -30,6 +30,7 @@ function MainSkills() {
 
   return (
     <div className="skills">
+      <h3>Skills</h3>
       {isEditing ? (
         <>
           {skills.map((skill, index) => (
@@ -50,7 +51,6 @@ function MainSkills() {
         </>
       ) : (
         <>
-          <h3>Skills</h3>
           {skills.map((skill, index) => (
             <ul key={skill.id} className="skill-entry">
               <li>{skill.skills}</li>
