@@ -82,7 +82,10 @@ function PracticalExperience() {
               />
               <label>Start Date:</label>
               <input
-                type="date"
+                type="number"
+                placeholder="YYYY"
+                min="1900"
+                max={new Date().getFullYear()}
                 value={experience.startDate}
                 onChange={(e) =>
                   handleInputChange(experience.id, "startDate", e.target.value)
@@ -90,7 +93,10 @@ function PracticalExperience() {
               />
               <label>End Date:</label>
               <input
-                type="date"
+                type="number"
+                placeholder="YYYY"
+                min="1900"
+                max={new Date().getFullYear()}
                 value={experience.endDate}
                 onChange={(e) =>
                   handleInputChange(experience.id, "endDate", e.target.value)
