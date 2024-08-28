@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-function PracticalExperience() {
+function PracticalExperience({ setPracticalData }) {
   const [experiences, setExperiences] = useState([
     {
       id: 1,
@@ -12,6 +12,10 @@ function PracticalExperience() {
     },
   ]);
   const [isEditing, setIsEditing] = useState(true);
+
+  useEffect(() => {
+    setPracticalData(experiences);
+  }, [experiences, setPracticalData]);
 
   const handleInputChange = (id, field, value) => {
     setExperiences(

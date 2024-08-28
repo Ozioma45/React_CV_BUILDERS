@@ -45,6 +45,18 @@ const App = () => {
             </div>
           ))}
         </div>
+        <div className="cv-section">
+          <h2>Educational Experience</h2>
+          {practicalData.map((exp) => (
+            <div key={exp.id}>
+              <p>{exp.company}</p>
+              <p>{exp.position}</p>
+              <p>{exp.responsibilities}</p>
+              <p>{exp.startDate}</p>
+              <p>{exp.endDate}</p>
+            </div>
+          ))}
+        </div>
       </div>
 
       <div>
