@@ -71,6 +71,17 @@ const App = () => {
             <span key={hobby.id}>{hobby.hobbies}</span>
           ))}
         </div>
+        <div className="cv-section">
+          <h2>Referee</h2>
+          {refereeData.map((ref) => (
+            <div key={ref.id}>
+              <p>{ref.name}</p>
+              <p>{ref.position}</p>
+              <p>{ref.institution}</p>
+              <p>{ref.number}</p>
+            </div>
+          ))}
+        </div>
       </div>
 
       <div>

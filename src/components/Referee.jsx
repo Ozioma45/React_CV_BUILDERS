@@ -1,10 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-function Referee() {
+function Referee({ setRefereeData }) {
   const [referee, setReferee] = useState([
     { id: 1, name: "", position: "", institution: "", number: "" },
   ]);
   const [isEditing, setIsEditing] = useState(true);
+
+  useEffect(() => {
+    setRefereeData(referee);
+  }, [referee, setRefereeData]);
 
   const handleInputChange = (id, field, value) => {
     setReferee(
