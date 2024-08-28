@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-function MainHobbies() {
+function MainHobbies({ setHobbiesData }) {
   const [hobbies, setHobbies] = useState([{ id: 1, hobbies: "" }]);
   const [isEditing, setIsEditing] = useState(true);
+
+  useEffect(() => {
+    setHobbiesData(hobbies);
+  }, [hobbies, setHobbiesData]);
 
   const handleInputChange = (id, field, value) => {
     setHobbies(
@@ -30,7 +34,7 @@ function MainHobbies() {
 
   return (
     <div className="hobbies">
-      <h3>General Information</h3>
+      <h3>Hobbies</h3>
       {isEditing ? (
         <>
           {hobbies.map((hobby, index) => (
@@ -51,7 +55,6 @@ function MainHobbies() {
         </>
       ) : (
         <>
-          <h3>Hobbies</h3>
           {hobbies.map((hobby, index) => (
             <span key={hobby.id} className="hobby-entry">
               {hobby.hobbies}

@@ -65,6 +65,12 @@ const App = () => {
             </ul>
           ))}
         </div>
+        <div className="cv-section">
+          <h2>Hobbies</h2>
+          {hobbiesData.map((hobby) => (
+            <span key={hobby.id}>{hobby.hobbies}</span>
+          ))}
+        </div>
       </div>
 
       <div>
