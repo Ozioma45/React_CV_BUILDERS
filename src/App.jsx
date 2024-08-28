@@ -134,18 +134,23 @@ const App = () => {
           ))}
         </div>
         <div className="cv-section">
-          <h2>Objective</h2>
+          <h5>OBJECTIVE</h5>
           <p>{objective}</p>
         </div>
         <div className="cv-section">
-          <h2>Educational Experience</h2>
+          <h5>EDUCATIONAL QUALIFICATION WITH DATE</h5>
           {educationData.map((edu) => (
-            <div key={edu.id}>
-              <p>{edu.school}</p>
-              <p>{edu.title}</p>
-              <p>{edu.startDate}</p>
-              <p>{edu.endDate}</p>
-            </div>
+            <ul key={edu.id} className="list-group">
+              <li className="list-group-item d-flex justify-content-between align-items-start">
+                <div className="ms-2 me-auto">
+                  <div className="fw-bold">{edu.school}</div>
+                  {edu.title}
+                </div>
+                <span className="fw-bold">
+                  {edu.startDate} - {edu.endDate}
+                </span>
+              </li>
+            </ul>
           ))}
         </div>
         <div className="cv-section">
