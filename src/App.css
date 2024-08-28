@@ -1,38 +1,86 @@
 .app {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  gap: 20px;
   padding: 20px;
-  background-color: #f0f2f5;
 }
 
-.container {
-  display: flex;
-  width: 80%;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.left-side {
+.input-section {
   flex: 1;
-  background-color: #ffffff;
+  background-color: #f8f9fa;
   padding: 20px;
-  border-right: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: 100vh;
+  overflow-y: auto;
 }
 
-.right-side {
+.cv-preview {
   flex: 2;
   background-color: #ffffff;
   padding: 20px;
-}
-
-h2 {
-  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: 100vh;
+  overflow-y: auto;
 }
 
 .cv-section {
   margin-bottom: 20px;
+}
+
+.cv-section h2 {
+  margin-bottom: 10px;
+}
+
+.tab-navigation {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.tab-navigation button {
+  flex: 1;
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  background-color: #e7e7e7;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.tab-navigation button.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.tab-navigation button:hover {
+  background-color: #0056b3;
+  color: white;
+}
+
+.tab-content {
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Hide all elements except the CV preview when printing */
+@media print {
+  body * {
+    visibility: hidden; /* Hide everything by default */
+  }
+
+  .print-only,
+  .print-only * {
+    visibility: visible; /* Make the CV preview section visible */
+  }
+
+  .print-only {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
 }
