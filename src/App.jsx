@@ -57,6 +57,14 @@ const App = () => {
             </div>
           ))}
         </div>
+        <div className="cv-section">
+          <h2>Skills</h2>
+          {skillsData.map((skill) => (
+            <ul key={skill.id}>
+              <li>{skill.skills}</li>
+            </ul>
+          ))}
+        </div>
       </div>
 
       <div>

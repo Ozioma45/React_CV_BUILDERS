@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-function MainSkills() {
+function MainSkills({ setSkillsData }) {
   const [skills, setSkills] = useState([{ id: 1, skills: "" }]);
   const [isEditing, setIsEditing] = useState(true);
+
+  useEffect(() => {
+    setSkillsData(skills);
+  }, [skills, setSkillsData]);
 
   const handleInputChange = (id, field, value) => {
     setSkills(
