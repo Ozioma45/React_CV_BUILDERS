@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-function Objectives() {
+function Objectives({ setObjectivesData }) {
   const [objective, setObjective] = useState("");
   const [isEditing, setIsEditing] = useState(true);
+
+  useEffect(() => {
+    setObjectivesData(objective);
+  }, [objective, setObjectivesData]);
 
   const handleInputChange = (value) => {
     setObjective(value);
@@ -34,7 +38,6 @@ function Objectives() {
       ) : (
         <>
           <div className="education-entry">
-            <h3>Objective</h3>
             <p>{objective}</p>
           </div>
           <button onClick={handleEdit}>Edit</button>

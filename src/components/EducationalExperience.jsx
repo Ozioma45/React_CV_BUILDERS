@@ -1,10 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-function EducationExperience() {
+function EducationExperience({ setEducationData }) {
   const [educations, setEducations] = useState([
     { id: 1, school: "", title: "", startDate: "", endDate: "" },
   ]);
   const [isEditing, setIsEditing] = useState(true);
+
+  useEffect(() => {
+    setEducationData(educations);
+  }, [educations, setEducationData]);
 
   const handleInputChange = (id, field, value) => {
     setEducations(
@@ -58,7 +62,10 @@ function EducationExperience() {
               />
               <label>Start Date:</label>
               <input
-                type="date"
+                type="number"
+                placeholder="YYYY"
+                min="1900"
+                max={new Date().getFullYear()}
                 value={education.startDate}
                 onChange={(e) =>
                   handleInputChange(education.id, "startDate", e.target.value)
@@ -66,7 +73,10 @@ function EducationExperience() {
               />
               <label>End Date:</label>
               <input
-                type="date"
+                type="number"
+                placeholder="YYYY"
+                min="1900"
+                max={new Date().getFullYear()}
                 value={education.endDate}
                 onChange={(e) =>
                   handleInputChange(education.id, "endDate", e.target.value)

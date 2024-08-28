@@ -1,19 +1,18 @@
 import { useState, useEffect } from "react";
-/* import "./GeneralInfo.css"; */
 
 function GeneralInfo({ setGeneralData }) {
-  const [generaldata, setGeneraldata] = useState([
+  const [generalData, setGeneraldata] = useState([
     { id: 1, name: "", address: "", phone: "", email: "" },
   ]);
   const [isEditing, setIsEditing] = useState(true);
 
   useEffect(() => {
-    setGeneralData(generaldata); // Pass updated educations data to App
-  }, [generaldata, setGeneralData]);
+    setGeneralData(generalData);
+  }, [generalData, setGeneralData]);
 
   const handleInputChange = (id, field, value) => {
     setGeneraldata(
-      generaldata.map((data) =>
+      generalData.map((data) =>
         data.id === id ? { ...data, [field]: value } : data
       )
     );
@@ -32,7 +31,7 @@ function GeneralInfo({ setGeneralData }) {
       <h3>General Information</h3>
       {isEditing ? (
         <>
-          {generaldata.map((data, index) => (
+          {generalData.map((data) => (
             <div key={data.id} className="general-info-entry">
               <input
                 type="text"
@@ -61,7 +60,7 @@ function GeneralInfo({ setGeneralData }) {
               <input
                 type="text"
                 placeholder="Your Email"
-                value={data.address}
+                value={data.email}
                 onChange={(e) =>
                   handleInputChange(data.id, "email", e.target.value)
                 }
@@ -72,12 +71,20 @@ function GeneralInfo({ setGeneralData }) {
         </>
       ) : (
         <>
-          {generaldata.map((data, index) => (
-            <div key={data.id} className="education-entry">
-              <p>Name: {data.name}</p>
-              <p>Address: {data.address}</p>
-              <p>Tel : {data.phone}</p>
-              <p>Email: {data.email}</p>
+          {generalData.map((data) => (
+            <div key={data.id} className="general-info-display">
+              <p>
+                <strong>Name:</strong> {data.name}
+              </p>
+              <p>
+                <strong>Address:</strong> {data.address}
+              </p>
+              <p>
+                <strong>Tel:</strong> {data.phone}
+              </p>
+              <p>
+                <strong>Email:</strong> {data.email}
+              </p>
             </div>
           ))}
           <button onClick={handleEdit}>Edit</button>
