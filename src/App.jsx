@@ -154,19 +154,23 @@ const App = () => {
           ))}
         </div>
         <div className="cv-section">
-          <h2>Work Experience</h2>
+          <h5>WORK EXPERIENCE</h5>
           {practicalData.map((exp) => (
-            <div key={exp.id}>
-              <p>{exp.company}</p>
-              <p>{exp.position}</p>
-              <p>{exp.responsibilities}</p>
-              <p>{exp.startDate}</p>
-              <p>{exp.endDate}</p>
-            </div>
+            <ul key={exp.id} className="list-group">
+              <li className="list-group-item d-flex justify-content-between align-items-start">
+                <div className="ms-2 me-auto">
+                  <div className="fw-bold">{exp.company}</div>
+                  {exp.position}
+                </div>
+                <span className="fw-bold">
+                  {exp.startDate} - {exp.endDate}
+                </span>
+              </li>
+            </ul>
           ))}
         </div>
         <div className="cv-section">
-          <h2>Skills</h2>
+          <h5>Skills</h5>
           <ul>
             {skillsData.map((skill) => (
               <li key={skill.id}>{skill.skills}</li>
@@ -174,21 +178,27 @@ const App = () => {
           </ul>
         </div>
         <div className="cv-section">
-          <h2>Hobbies</h2>
-          {hobbiesData.map((hobby) => (
-            <span key={hobby.id}>{hobby.hobbies}</span>
-          ))}
+          <h5>Hobbies</h5>
+          <div className="ms-2">
+            {hobbiesData.map((hobby) => (
+              <span key={hobby.id}>{hobby.hobbies}</span>
+            ))}
+          </div>
         </div>
         <div className="cv-section">
-          <h2>Referee</h2>
-          {refereeData.map((ref) => (
-            <div key={ref.id}>
-              <p>{ref.name}</p>
-              <p>{ref.position}</p>
-              <p>{ref.institution}</p>
-              <p>{ref.number}</p>
-            </div>
-          ))}
+          <h5>Referee</h5>
+          <div className="ms-2">
+            {refereeData.map((ref) => (
+              <ul key={ref.id} className="list-unstyled">
+                <li>{ref.name}</li>
+                <li>{ref.position}</li>
+                <li>{ref.institution}</li>
+                <li>
+                  <strong>{ref.number}</strong>
+                </li>
+              </ul>
+            ))}
+          </div>
         </div>
       </div>
     </div>

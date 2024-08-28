@@ -6,7 +6,6 @@ function PracticalExperience({ setPracticalData }) {
       id: 1,
       company: "",
       position: "",
-      responsibilities: "",
       startDate: "",
       endDate: "",
     },
@@ -74,17 +73,6 @@ function PracticalExperience({ setPracticalData }) {
                   handleInputChange(experience.id, "position", e.target.value)
                 }
               />
-              <textarea
-                placeholder="Main Responsibilities"
-                value={experience.responsibilities}
-                onChange={(e) =>
-                  handleInputChange(
-                    experience.id,
-                    "responsibilities",
-                    e.target.value
-                  )
-                }
-              />
               <label>Start Date:</label>
               <input
                 type="number"
@@ -121,7 +109,6 @@ function PracticalExperience({ setPracticalData }) {
             <div key={experience.id} className="experience-entry">
               <p>Company Name: {experience.company}</p>
               <p>Position Title: {experience.position}</p>
-              <p>Main Responsibilities: {experience.responsibilities}</p>
               <p>Start Date: {experience.startDate}</p>
               <p>End Date: {experience.endDate}</p>
             </div>
