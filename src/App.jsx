@@ -116,11 +116,20 @@ const App = () => {
       <div className="col-8 cv-preview print-only">
         <div className="cv-section">
           {generalData.map((gen) => (
-            <div key={gen.id} className="text-center">
-              <p className="myName">{gen.name}</p>
-              <p>{gen.address}</p>
-              <p>{gen.phone}</p>
-              <p>{gen.email}</p>
+            <div key={gen.id} className="text-center generalinfo">
+              <h1 className="myName">{gen.name.toUpperCase()}</h1>
+              <p>
+                <strong>Address: </strong>
+                {gen.address}
+              </p>
+              <p>
+                <strong>Tel: </strong>
+                {gen.phone}
+              </p>
+              <p>
+                <strong>Email: </strong>
+                {gen.email}
+              </p>
             </div>
           ))}
         </div>
