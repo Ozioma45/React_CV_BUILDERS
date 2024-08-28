@@ -60,9 +60,16 @@ const App = () => {
         </div>
       </header>
 
-      <div className="col-4 input-section">
-        <h1>Input Information</h1>
+      <div className="row">
+        <div className="col-md-4 text-center">
+          <h1>Input Information</h1>
+        </div>
+        <div className="col-md-8 text-center">
+          <h1>CV Preview</h1>
+        </div>
+      </div>
 
+      <div className="col-4 input-section">
         {/* Tab navigation */}
         <div className="tab-navigation">
           <button
@@ -107,12 +114,10 @@ const App = () => {
       </div>
 
       <div className="col-8 cv-preview print-only">
-        <h1>CV Preview</h1>
         <div className="cv-section">
-          <h2>General Information</h2>
           {generalData.map((gen) => (
-            <div key={gen.id}>
-              <p>{gen.name}</p>
+            <div key={gen.id} className="text-center">
+              <p className="myName">{gen.name}</p>
               <p>{gen.address}</p>
               <p>{gen.phone}</p>
               <p>{gen.email}</p>
